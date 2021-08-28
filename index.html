@@ -1,0 +1,294 @@
+<html class="js-focus-visible" data-js-focus-visible="">
+  <head>
+    <title>Niftycase</title>
+    <!--
+    
+          ______ ______
+        _/      Y      \_
+       // ~~ ~~ | ~~ ~  \\
+      // ~ ~ ~~ | ~~~ ~~ \\      Easter Egg 1/2 found
+     //________.|.________\\     by Matt Welter
+    `----------`-'----------'
+
+
+    -->
+    <meta content="Niftycase – Building crypto products" property="og:title">
+    <meta content="Building crypto products to increase the adoption rate of web 3.0" property="og:description">
+    <link rel="icon" href="media/favicon.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon"/>
+    <meta property="og:title" content="Niftycase – Embedded NFT Gallery" />
+    <meta property="og:url" content="https://niftycaseio" />
+    <meta property="og:image" content="media/thumbnail.png" />
+    <meta name="description" content="Building crypto products to increase the adoption rate of web 3.0">
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link href="//db.onlinewebfonts.com/c/511031ed9122c8ea1450b18b876221fe?family=SF+Pro+Rounded" rel="stylesheet" type="text/css"/>
+
+    <style>
+      body {
+        background-color: #F8FEFD;
+        color: #134A56;
+        font-family: "SF Pro Rounded";
+      }
+
+      #main {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        top: 25%;
+      }
+
+      h1, h2 {
+        text-align: center;
+      }
+
+      h1 {
+        font-weight: 400;
+        font-size: 28px;
+        text-align: left;
+        padding-bottom: 8px;
+        color: #99abaf;
+        line-height: 35px;
+      }
+
+      #h1a {
+        font-weight: 700;
+        font-size: 32px;
+        color: #134A56;
+      }
+
+      h2 {
+        font-size: 12px;
+      }
+
+      #hero-section {
+        max-width: 500px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .container {
+        max-width: 500px;
+      }
+
+      .col {
+        background-color: #E4F1F0;
+        font-size: 45px;
+        height: 64px;
+        margin: 2px;
+        text-align: center;
+      }
+
+      .col-alive:hover {
+        border: 1px solid black;
+        margin: 1px;
+        box-shadow: 0px 0px 4px black;
+        z-index: 999;
+        text-decoration: none;
+      }
+
+      .hoverSpan {
+        display: none;
+        font-family: "IBM Plex Mono";
+        position: absolute;
+        margin: 0 auto;
+        text-align: center;
+        top: 50%;
+        left: 0px;
+        right: 0px;
+        padding: 4px 8px;
+        background-color: #fafafa;
+        width: fit-content;
+        z-index: 9999;
+        font-size: 12px;
+        box-shadow: 0px 0px 4px grey;
+        pointer-events: none;
+        border-radius: 2px;
+      }
+
+      #col1 {
+        background-color: #EFF259;
+      }
+
+      #col2 {
+        background-color: #5BD4FF;
+      }
+
+      #col3 {
+        background-color: #ff7d7d;
+      }
+
+      #speachBubble {
+        display: block;
+        bottom: 0px;
+        margin: 24px 0px 36px 0px;
+      }
+
+      #speachBubble a {
+        color: inherit;
+      }
+
+      #profilepic {
+        width: 36px;
+        border-radius: 24px;
+        margin-top: -22px;
+        margin-left: -20px;
+        box-shadow: 0 0 0 2pt white;
+      }
+
+      #profilepic2 {
+        width: 36px;
+        border-radius: 24px;
+        margin-top: -22px;
+      }
+
+      #speachbubble > div > section {
+        display: inline-block;
+      }
+
+      #speachbubble > div > section > p:nth-child(1) {
+        color: #333;
+        font-weight: 500;
+      }
+
+      #speachbubble > div > section > p:nth-child(2) {
+        color: #757575;
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+
+      #speachbubble > div > section > p:nth-child(1), #speachbubble > div > section > p:nth-child(2) {
+        margin: 0px;
+        padding-left: 8px;
+        margin-bottom: -4px;
+      }
+
+      @media (max-width: 500px) {
+        .col {
+          padding-top: 4px;
+          font-size: 38px;
+        }
+        #hero-section, .container {
+          padding: 0px 24px;
+        }
+      }
+
+      @import url(//db.onlinewebfonts.com/c/511031ed9122c8ea1450b18b876221fe?family=SF+Pro+Rounded);
+      @font-face {
+        font-family: "SF Pro Rounded";
+        src: url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.eot");
+        src: url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.svg#SF Pro Rounded") format("svg");
+      }
+    </style>
+  </head>
+
+
+  <body>
+    <div id="main">
+      <div id="hero-section">
+        <h1><a id="h1a">Building crypto products</a> <br>to increase the adoption rate of web 3.0</h1>
+        <div class="container">
+          <span class="hoverSpan" id="hoverSpan1">Embed NFT Collection</span>
+          <span class="hoverSpan" id="hoverSpan2">NFT Twitter Banner Generator</span>
+          <span class="hoverSpan" id="hoverSpan3">Twitter Crypto Price Bot – Template</span>
+          <div class="row">
+            <a class="col col-alive" id="col1" data-toggle="tooltip" data-placement="top" title="Embed NFT Collection on any website" href="https://niftycase.io" target="_blank">
+                🖼️
+            </a>
+            <a class="col col-alive" id="col2" data-toggle="tooltip" data-placement="top" title="NFT Twitter Banner Generator" href="https://mattwelter.github.io/nft-twitter-banner/" target="_blank">
+              🐦
+            </a>
+            <a class="col col-alive" id="col3" data-toggle="tooltip" data-placement="top" title="Twitter Crypto Price Bot – Template" href="https://github.com/mattwelter/crypto-price-bot" target="_blank">
+              🤖
+            </a>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+          </div>
+        </div>
+        <section id="speachBubble">
+          <div>
+            <img id="profilepic2" src="media/felix.png">
+            <img id="profilepic" src="media/mattwelter.png">
+            <section>
+              <p><a href="https://stackoverflow.com/users/13708022/detlef" target="_blank">Detlef</a> & <a href="https://twitter.com/_mattwelter" target="_blank">Matt Welter</a></p>
+              <p>Creators of Niftycase</p>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById('col1').onmouseover = function(){
+          document.getElementById('hoverSpan1').style.display = 'block';
+      }
+      document.getElementById('col1').onmouseout = function(){
+          document.getElementById('hoverSpan1').style.display = '';
+      }
+
+      document.getElementById('col2').onmouseover = function(){
+          document.getElementById('hoverSpan2').style.display = 'block';
+      }
+      document.getElementById('col2').onmouseout = function(){
+          document.getElementById('hoverSpan2').style.display = '';
+      }
+
+      document.getElementById('col3').onmouseover = function(){
+          document.getElementById('hoverSpan3').style.display = 'block';
+      }
+      document.getElementById('col3').onmouseout = function(){
+          document.getElementById('hoverSpan3').style.display = '';
+      }
+    </script>
+  </body>
+</html>
