@@ -125,7 +125,7 @@
       }
 
       #speachBubble {
-        display: block;
+        display: inline-block;
         bottom: 0px;
         margin: 24px 0px 36px 0px;
       }
@@ -146,6 +146,83 @@
         width: 36px;
         border-radius: 24px;
         margin-top: -22px;
+      }
+
+      a.supportEth {
+        font-weight: 500;
+        letter-spacing: 0px;
+        font-size: 16px;
+        color: #333 !important;
+      }
+
+      #supportEthWrapper {
+        display: inline-block;
+        margin-left: 24px;
+        margin-top: -16px;
+        float: right;
+        text-align: right;
+      }
+
+      #copy {
+        width: 16px;
+        margin-left: -2px;
+        margin-top: -7px;
+      }
+
+      .eth-copy {
+        cursor: pointer;
+        padding: 4px 0px;
+        margin-top: -8px;
+      }
+
+      .eth-copy:hover {
+        opacity: 0.65;
+      }
+
+      .eth-copy:active {
+        opacity: 0.45;
+      }
+
+      .eth-copy button {
+        font-weight: 400;
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font: inherit;
+        outline: inherit;
+        margin-top: 2px;
+        color: #757575;
+        font-size: 12px;
+      }
+      
+      #copied {
+        background-color: #8b8b8b;
+        color: white;
+        width: fit-content;
+        padding: 8px;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .fademe {
+        opacity: 0;
+      }
+
+      .fademe.animated {
+        animation:fade-in 1s ease;
+      }
+
+      @keyframes fade-in {
+          from {
+              opacity: 1;
+          }
+          to {
+              opacity: 0;
+              -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0);
+            }
       }
 
       #speachbubble > div > section {
@@ -252,6 +329,16 @@
             </section>
           </div>
         </section>
+        <section id="supportEthWrapper">
+          <div id="copied" class="fademe">Copied!</div>
+          <a class="supportEth">Support via Ξ ETH</a>
+          <article class="eth-copy">
+              <div style="display:inline-block; vertical-align:top;">
+                <button>0x6C4c...F2d2</button>
+              </div>
+              <img id="copy" src="media/copy.png">
+          </article>
+        </section>
       </div>
     </div>
 
@@ -276,6 +363,52 @@
       document.getElementById('col3').onmouseout = function(){
           document.getElementById('hoverSpan3').style.display = '';
       }
+    </script>
+    <script type="text/javascript">
+      function fallbackCopyTextToClipboard(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          var successful = document.execCommand('copy');
+          var msg = successful ? 'successful' : 'unsuccessful';
+          console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+      }
+      function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+          fallbackCopyTextToClipboard(text);
+          return;
+        }
+        navigator.clipboard.writeText(text).then(function() {
+          console.log('Async: Copying to clipboard was successful!');
+        }, function(err) {
+          console.error('Async: Could not copy text: ', err);
+        });
+      }
+
+      var copyJaneBtn = document.querySelector('.eth-copy');
+
+      copyJaneBtn.addEventListener('click', function(event) {
+        copyTextToClipboard('0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2');
+        $(".fademe").addClass('animated');
+        setTimeout(function() {
+              $(".fademe").removeClass('animated');
+        }, 1500);
+      });
     </script>
   </body>
 </html>
